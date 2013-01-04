@@ -299,7 +299,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "space", function () awful.layout.inc(layouts,  1) end),
     awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(layouts, -1) end),
     awful.key({ modkey, "Shift"   }, "d",     function () awful.util.spawn("lxlock")   end),
-    awful.key({ modkey, "Shift"   }, "p",     function () awful.util.spawn("gksudo pm-suspend") end),
+    awful.key({ modkey, "Shift"   }, "p",     function () awful.util.spawn("sudo pm-suspend") end),
 
     -- Prompt
     awful.key({ modkey },            "r",     function () mypromptbox[mouse.screen]:run() end),
