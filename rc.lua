@@ -1,4 +1,3 @@
---You WILL have to adjust filepaths for your machine.
 -- Standard awesome library
 require("awful")
 require("awful.autofocus")
@@ -19,7 +18,8 @@ require("freedesktop.menu")
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, and wallpapers
-beautiful.init("/home/apaulson/.config/awesome/alex.lua")
+local configdir = awful.util.getdir ("config")
+beautiful.init(configdir .. "/monokai.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "urxvtc"

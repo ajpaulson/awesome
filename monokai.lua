@@ -1,6 +1,7 @@
---Tea by Him
---You WILL have to adjust filepaths for your machine.
 theme = {}
+
+require("awful")
+local configdir = awful.util.getdir ("config")
 
 theme.font          = "monofur for Powerline 10.5"
 
@@ -73,7 +74,7 @@ theme.titlebar_floating_button_focus_inactive  = "/usr/share/awesome/themes/zenb
 theme.titlebar_floating_button_normal_active = "/usr/share/awesome/themes/zenburn/titlebar/floating_normal_active.png"
 theme.titlebar_floating_button_focus_active  = "/usr/share/awesome/themes/zenburn/titlebar/floating_focus_active.png"
 theme.titlebar_maximized_button_normal_inactive = "/usr/share/awesome/themes/zenburn/titlebar/maximized_normal_inactive.png"
-theme.titlebar_maximized_button_focus_inactive  = "/usrr/share/awesome/themes/zenburn/titlebar/maximized_focus_inactive.png"
+theme.titlebar_maximized_button_focus_inactive  = "/usr/share/awesome/themes/zenburn/titlebar/maximized_focus_inactive.png"
 theme.titlebar_maximized_button_normal_active = "/usr/share/awesome/themes/zenburn/titlebar/maximized_normal_active.png"
 theme.titlebar_maximized_button_focus_active  = "/usr/share/awesome/themes/zenburn/titlebar/maximized_focus_active.png"
 
@@ -82,20 +83,20 @@ theme.titlebar_maximized_button_focus_active  = "/usr/share/awesome/themes/zenbu
 theme.wallpaper_cmd = {"nitrogen --restore"}
 
 -- You can use your own layout icons like this:
-theme.layout_fairh = "/home/apaulson/.config/awesome/icons/layouts-huge-fill/fairh.png"
-theme.layout_fairv = "/home/apaulson/.config/awesome/icons/layouts-huge-fill/fairv.png"
-theme.layout_floating  = "/home/apaulson/.config/awesome/icons/layouts-huge-fill/floating.png"
-theme.layout_magnifier = "/home/apaulson/.config/awesome/icons/layouts-huge-fill/magnifier.png"
-theme.layout_max = "/home/apaulson/.config/awesome/icons/layouts-huge-fill//max.png"
-theme.layout_fullscreen = "/home/apaulson/.config/awesome/icons/layouts-huge-fill/fullscreen.png"
-theme.layout_tilebottom = "/home/apaulson/.config/awesome/icons/layouts-huge-fill/tilebottom.png"
-theme.layout_tileleft   = "/home/apaulson/.config/awesome/icons/layouts-huge-fill/tileleft.png"
-theme.layout_tile = "/home/apaulson/.config/awesome/icons/layouts-huge-fill/tile.png"
-theme.layout_tiletop = "/home/apaulson/.config/awesome/icons/layouts-huge-fill/tiletop.png"
-theme.layout_spiral  = "/home/apaulson/.config/awesome/icons/layouts-huge-fill/spiral.png"
-theme.layout_dwindle = "/home/apaulson/.config/awesome/icons/layouts-huge-fill/dwindle.png"
+theme.layout_fairh = configdir .. "/icons/layouts-huge-fill/fairh.png"
+theme.layout_fairv = configdir .. "/icons/layouts-huge-fill/fairv.png"
+theme.layout_floating  = configdir .. "/icons/layouts-huge-fill/floating.png"
+theme.layout_magnifier = configdir .. "/icons/layouts-huge-fill/magnifier.png"
+theme.layout_max = configdir .. "/icons/layouts-huge-fill//max.png"
+theme.layout_fullscreen = configdir .. "/icons/layouts-huge-fill/fullscreen.png"
+theme.layout_tilebottom = configdir .. "/icons/layouts-huge-fill/tilebottom.png"
+theme.layout_tileleft   = configdir .. "/icons/layouts-huge-fill/tileleft.png"
+theme.layout_tile = configdir .. "/icons/layouts-huge-fill/tile.png"
+theme.layout_tiletop = configdir .. "/icons/layouts-huge-fill/tiletop.png"
+theme.layout_spiral  = configdir .. "/icons/layouts-huge-fill/spiral.png"
+theme.layout_dwindle = configdir .. "/icons/layouts-huge-fill/dwindle.png"
 
-theme.awesome_icon = "/home/apaulson/.config/awesome/icons/debian-swirl.png"
+theme.awesome_icon = configdir .. "/icons/debian-swirl.png"
 
 return theme
  --vim: filetype=lua:expandtab:shiftwidth=4:tabstop=8:softtabstop=4:encoding=utf-8:textwidth=80
