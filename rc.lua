@@ -16,6 +16,9 @@ require("freedesktop.utils")
 freedesktop.utils.icon_theme = { 'gnome' }
 require("freedesktop.menu")
 
+-- r.run for run once
+local r = require("runonce")
+
 -- {{{ Variable definitions
 -- Themes define colours, icons, and wallpapers
 local configdir = awful.util.getdir ("config")
@@ -37,13 +40,13 @@ awful.util.spawn_with_shell("xrandr --output LVDS1 --mode 1600x900")
 awful.util.spawn_with_shell("xrandr --output VGA1 --mode 1920x1080")
 awful.util.spawn_with_shell("xrandr --output VGA1 --right-of LVDS1")
 awful.util.spawn_with_shell("dropbox start")
-awful.util.spawn_with_shell("run_once sleep 10s && xcompmgr -o.75 &")
-awful.util.spawn_with_shell("run_once volumeicon")
-awful.util.spawn_with_shell("run_once parcellite")
-awful.util.spawn_with_shell("run_once xfce4-power-manager")
-awful.util.spawn_with_shell("run_once wicd-client")
-awful.util.spawn_with_shell("run_once urxvtd -q -f -o &")
-awful.util.spawn_with_shell("run_once gnome-keyring-daemon --start -c pkcs11 &")
+r.run("sleep 10s && xcompmgr -0.75 &")
+r.run("volumeicon")
+r.run("parcellite")
+r.run("xfce4-power-manager")
+r.run("wicd-client")
+r.run("urxvtd -q -o -f")
+r.run("gnome-keyring-daemon --start -c pkcs11 &")
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
@@ -108,13 +111,13 @@ mylauncher = awful.widget.launcher({ image = image(beautiful.awesome_icon),
 -- Initialize widget
 timewidget = widget({ type = "textbox" })
 -- Register widget
-vicious.register(timewidget, vicious.widgets.date, '<span foreground="#585656" background="#cac6ce" weight="bold">⮂</span><span foreground="#cac6ce" weight="bold"> %F ≀ %R </span>')
+vicious.register(timewidget, vicious.widgets.date, '<span foreground="#585656" background="#cac6ce" weight="bold"></span><span foreground="#cac6ce" weight="bold"> %F ≀ %R </span>')
 timewidget.bg = "#585656"
 
 -- Initialize widget
 batwidget = widget({ type = "textbox" })
 -- Register widget
-vicious.register(batwidget, vicious.widgets.bat, '<span foreground="#cac6ce" background="#FD971F">⮂</span><span foreground="#585656" weight="bold"> 🔋 $1$2% </span>', 20, "BAT0")
+vicious.register(batwidget, vicious.widgets.bat, '<span foreground="#cac6ce" background="#FD971F"></span><span foreground="#585656" weight="bold"> 🔋 $1$2% </span>', 20, "BAT0")
 batwidget.bg = "#cac6ce"
 
 -- VolWidget
@@ -123,14 +126,14 @@ vicious.register(volwidget, vicious.widgets.volume, '<span foreground="#1B1D1E">
 volwidget.bg = "#FD971F"
 
 volarr = widget({ type = "textbox" })
-volarr.text = '<span foreground="#FD971F">⮂</span>'
+volarr.text = '<span foreground="#FD971F"></span>'
 volarr.bg = "#1B1D1E00"
 
 space = widget({ type = "textbox" })
 space.text = " "
 
 rightarr = widget({ type = "textbox" })
-rightarr.text = '<span foreground="#82B414">⮀</span>'
+rightarr.text = '<span foreground="#82B414"></span>'
 rightarr.bg = "#1B1D1E00"
 
 wrapa = widget({ type = "textbox" })
