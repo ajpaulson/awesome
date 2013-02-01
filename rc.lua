@@ -47,6 +47,7 @@ r.run("xfce4-power-manager")
 r.run("wicd-client")
 r.run("urxvtd -q -o -f")
 r.run("gnome-keyring-daemon --start -c pkcs11 &")
+r.run("eval $(gpg-agent --daemon) &")
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
