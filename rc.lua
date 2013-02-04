@@ -28,7 +28,7 @@ beautiful.init(configdir .. "/monokai.lua")
 terminal = "urxvtc"
 editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
-browser = "google-chrome"
+browser = "chromium"
 file = "nautilus"
 chat = "pidgin"
 
