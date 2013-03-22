@@ -74,7 +74,7 @@ layouts =
  -- Define a tag table which will hold all screen tags.
  tags = {
    names  = { "ᨁ", "ᨅ", "ᨇ", "ᨑ"},
-   layout = { layouts[5], layouts[1], layouts[1], layouts[1]
+   layout = { layouts[5], layouts[1], layouts[1], layouts[5]
  }}
  for s = 1, screen.count() do
  tags[s] = awful.tag(tags.names, s, tags.layout)
@@ -392,7 +392,7 @@ awful.rules.rules = {
                      keys = clientkeys,
                      buttons = clientbuttons } },
     { rule = { class = "VLC" },
-      properties = { floating = true } },
+      properties = { floating = false } },
     { rule = { class = "pinentry" },
       properties = { floating = true } },
     { rule = { instance = "exe" },
