@@ -93,7 +93,7 @@ myawesomemenu = {
    { "reboot" , "sudo reboot" },
    { "hibernate" , "sudo pm-suspend-hybrid" },
    { "sleep" , "sudo pm-suspend" },
-   { "lock" , "lxlock" }
+   { "lock" , "xscreensaver-command -lock" }
 }
 
 mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
@@ -302,7 +302,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Control" }, "l",     function () awful.tag.incncol(-1)         end),
     awful.key({ modkey,           }, "space", function () awful.layout.inc(layouts,  1) end),
     awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(layouts, -1) end),
-    awful.key({ modkey, "Shift"   }, "d",     function () awful.util.spawn("lxlock")   end),
+    awful.key({ modkey, "Shift"   }, "d",     function () awful.util.spawn("xscreensaver-command -lock")   end),
     awful.key({ modkey, "Shift"   }, "p",     function () awful.util.spawn("sudo pm-suspend") end),
 
     -- Prompt
