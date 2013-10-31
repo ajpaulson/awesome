@@ -34,8 +34,8 @@ chat = "pidgin"
 
 awful.util.spawn_with_shell("synclient TapButton1=1 && synclient TapButton2=3  && synclient TapButton3=2")
 awful.util.spawn_with_shell("xscreensaver -no-splash")
-awful.util.spawn_with_shell("xmodmap -e 'keycode 135 = Super_R'")
-awful.util.spawn_with_shell("xmodmap -e 'remove Lock = Caps_Lock' && xmodmap -e 'keysym Caps_Lock = Escape'")
+awful.util.spawn_with_shell("setxkbmap -option caps:escape")
+awful.util.spawn_with_shell("setxkbmap -option altwin:alt_super_win")
 awful.util.spawn_with_shell("xrandr --output LVDS1 --mode 1600x900")
 awful.util.spawn_with_shell("xrandr --output VGA1 --mode 1920x1080")
 awful.util.spawn_with_shell("xrandr --output VGA1 --right-of LVDS1")
@@ -271,7 +271,7 @@ globalkeys = awful.util.table.join(
         end),
     awful.key({ modkey,           }, "w", function () mymainmenu:show({keygrabber=true}) end),
 
-    --Volume manipulation  
+    --Volume manipulation
      awful.key({ }, "XF86AudioRaiseVolume", function () awful.util.spawn("amixer set Master 5+") end),
      awful.key({ }, "XF86AudioLowerVolume", function () awful.util.spawn("amixer set Master 5-") end),
 
@@ -402,7 +402,7 @@ awful.rules.rules = {
     { rule = { class = "gimp" },
       properties = { floating = true } },
     { rule = { class = "URxvt" },
-      properties = { opacity = 0.85 } },
+      properties = { opacity = 0.97 } },
     { rule = { class = "XTerm" },
       properties = { opacity = 0.8 } },
     { rule = { class = "Pidgin" },
