@@ -306,7 +306,8 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Shift"   }, "p",     function () awful.util.spawn("sudo pm-suspend") end),
 
     -- Prompt
-    awful.key({ modkey },            "r",     function () mypromptbox[mouse.screen]:run() end),
+    --awful.key({ modkey },            "r",     function () mypromptbox[mouse.screen]:run() end),
+    awful.key({ modkey },            "r",     function () awful.util.spawn( "gmrun" )  end),
 
     awful.key({ modkey }, "x",
               function ()
