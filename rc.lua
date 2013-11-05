@@ -35,7 +35,7 @@ chat = "pidgin"
 awful.util.spawn_with_shell("synclient TapButton1=1 && synclient TapButton2=3  && synclient TapButton3=2")
 awful.util.spawn_with_shell("xscreensaver -no-splash")
 awful.util.spawn_with_shell("setxkbmap -option caps:escape")
-awful.util.spawn_with_shell("setxkbmap -option altwin:alt_super_win")
+--awful.util.spawn_with_shell("setxkbmap -option altwin:alt_super_win")
 awful.util.spawn_with_shell("xrandr --output LVDS1 --mode 1600x900")
 awful.util.spawn_with_shell("xrandr --output VGA1 --mode 1920x1080")
 awful.util.spawn_with_shell("xrandr --output VGA1 --right-of LVDS1")
@@ -403,9 +403,9 @@ awful.rules.rules = {
     { rule = { class = "gimp" },
       properties = { floating = true } },
     { rule = { class = "URxvt" },
-      properties = { opacity = 0.97 } },
+      properties = { opacity = 0.95 } },
     { rule = { class = "XTerm" },
-      properties = { opacity = 0.8 } },
+      properties = { opacity = 0.95 } },
     { rule = { class = "Pidgin" },
       properties = { opacity = 0.95 } },
 }
