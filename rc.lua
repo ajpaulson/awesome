@@ -35,7 +35,7 @@ chat = "pidgin"
 awful.util.spawn_with_shell("synclient TapButton1=1 && synclient TapButton2=3  && synclient TapButton3=2")
 awful.util.spawn_with_shell("xscreensaver -no-splash")
 awful.util.spawn_with_shell("setxkbmap -option caps:escape")
---awful.util.spawn_with_shell("setxkbmap -option altwin:alt_super_win")
+awful.util.spawn_with_shell("setxkbmap -option altwin:alt_super_win")
 awful.util.spawn_with_shell("dropbox start")
 r.run("sleep 10s && xcompmgr -o .75 &")
 r.run("volumeicon")
@@ -115,7 +115,7 @@ timewidget.bg = "#585656"
 -- Initialize widget
 batwidget = widget({ type = "textbox" })
 -- Register widget
-vicious.register(batwidget, vicious.widgets.bat, '<span foreground="#cac6ce" background="#FD971F"></span><span foreground="#585656" weight="bold"> 🔋 $1$2% </span>', 20, "BAT0")
+vicious.register(batwidget, vicious.widgets.bat, '<span foreground="#cac6ce" background="#FD971F"></span><span foreground="#585656" weight="bold"> 🔋 $1$2% </span>', 20, "BAT1")
 batwidget.bg = "#cac6ce"
 
 -- VolWidget
