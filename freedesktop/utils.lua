@@ -1,6 +1,7 @@
 -- Grab environment
 
 local io = io
+local os = os
 local table = table
 local type = type
 local ipairs = ipairs
@@ -33,7 +34,7 @@ all_icon_types = {
     'status',
     'mimetypes'
 }
-all_icon_paths = { '/usr/share/icons/' }
+all_icon_paths = { os.getenv("HOME") .. '/.icons/', '/usr/share/icons/' }
 
 icon_sizes = {}
 
@@ -184,7 +185,7 @@ function parse_desktop_file(arg)
     -- Split categories into a table.
     if program.Categories then
         program.categories = {}
-        for category in program.Categories:gfind('[^;]+') do
+        for category in program.Categories:gmatch('[^;]+') do
             table.insert(program.categories, category)
         end
     end
@@ -213,7 +214,7 @@ end
 -- @return A table with all .desktop entries.
 function parse_desktop_files(arg)
     local programs = {}
-    local files = get_lines('find '.. arg.dir ..' -maxdepth 1 -name "*.desktop"')
+    local files = get_lines('find '.. arg.dir ..' -name "*.desktop" 2>/dev/null')
     for file in files do
         arg.file = file
         table.insert(programs, parse_desktop_file(arg))

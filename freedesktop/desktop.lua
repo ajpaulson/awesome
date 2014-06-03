@@ -1,4 +1,3 @@
-local wibox = wibox
 local widget = widget
 local screen = screen
 local image = image
@@ -7,6 +6,8 @@ local table = table
 local ipairs = ipairs
 local awful = require("awful")
 local utils = require("freedesktop.utils")
+local wibox = require("wibox")
+local capi = { screen = screen }
 
 module("freedesktop.desktop")
 
@@ -20,20 +21,20 @@ function add_icon(settings)
     local s = settings.screen
 
     if not current_pos[s] then
-        current_pos[s] = { x = (screen[s].geometry.width - iconsize.width - margin.x), y = 40 }
+        current_pos[s] = { x = (capi.screen[s].geometry.width - iconsize.width - margin.x), y = 40 }
     end
 
     local totheight = (settings.icon and iconsize.height or 0) + (settings.label and labelsize.height or 0)
     if totheight == 0 then return end
 
-    if current_pos[s].y + totheight > screen[s].geometry.height - 40 then
+    if current_pos[s].y + totheight > capi.screen[s].geometry.height - 40 then
         current_pos[s].x = current_pos[s].x - labelsize.width - iconsize.width - margin.x
         current_pos[s].y = 40
     end
 
     if (settings.icon) then
         icon = awful.widget.button({ image = settings.icon })
-        local newbuttons = icon:buttons()
+        local newbuttons = icon:buttons({}, 1, nil, settings.click)
         table.insert(newbuttons, button({}, 1, nil, settings.click));
         icon:buttons(newbuttons)
 
@@ -51,7 +52,7 @@ function add_icon(settings)
     end
 
     if (settings.label) then
-        caption = widget({ type="textbox", align="right", width=labelsize.width })
+        caption = wibox.widget.textbox()
         caption.ellipsize = "middle"
         caption.text = settings.label
         caption:buttons({
